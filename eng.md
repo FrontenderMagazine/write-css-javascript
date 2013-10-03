@@ -1,9 +1,8 @@
-<article>
 Sometimes programming is just using the right tool. This may be a framework,
 library or as it happens in my case CSS preprocessor. You probably don't realize
 it, but LESS or SASS have a lot of constraints. I managed to change that by 
 writing my own CSS preprocessor. I stopped writing CSS and moved everything into
-the JavaScript world. This article is about[AbsurdJS][1]: a small Node.js
+the JavaScript world. This article is about [AbsurdJS][1]: a small Node.js
 module, which changed my workflow completely.
 
 ## The Concept {#the-concept}
@@ -17,7 +16,7 @@ and the input format. I didn't want to invent a new language or syntax, because
 this is connected with a lot of things like parsing and compiling. Thankfully, 
 Node.js is here and I decided to use it. Also, I had a lot of LESS type projects,
 which means that I already use Node.js to compile my styles. It was much easier 
-to replace a module instead of adding something completely new.\ 
+to replace a module instead of adding something completely new.
 
 ## The Input {#the-input}
 
@@ -28,9 +27,7 @@ AbsurdJS accepts. Of course there are some cons of this transformation. You have
 to put some properties in quotes and of course the values. This needs a little 
 bit more time during the writing, but as you will see below it's worth it.
 
-## In the Beginning was ... a JavaScript File {#in-the-beginning-was-a-
-javascript-file
-}
+## In the Beginning was ... a JavaScript File {#in-the-beginning-was-a-javascript-file}
 
 Here is how a simple LESS file looks like:
 
@@ -61,7 +58,7 @@ And here is its AbsurdJS equivalent. It's a simple Node.js module:
     
 
 You should assign a function to `module.exports`. It accepts a reference to the
-API, which has several methods, but the most important one is`add`. Simply pass
+API, which has several methods, but the most important one is `add`. Simply pass
 a JSON object and it will be converted to CSS.
 
 To compile the less file we need install LESS's compiler via 
@@ -210,7 +207,7 @@ Ok, we have mixins, variables, placeholders, functions, but once you start
 using them to write a little bit more complex things you are stuck. Let's get 
 the mixins. I want to create a mixin, which defines another mixin. That's 
 currently not possible in LESS, because you can't use a mixin defined in another
-mixin. I guess it's a scope problem. SASS has some[imperfections][4] regarding
+mixin. I guess it's a scope problem. SASS has some [imperfections][4] regarding
 the interpolation of the variables. Overall, it's hard to produce good 
 architecture with less code. You have to write a lot and even then, you can't 
 really achieve your goals. The main reason behind these problems is the fact 
@@ -260,10 +257,10 @@ At the end you get:
     
 
 Using the storage may be a little bit ugly. I mean, you need an array assigned
-to the selector and then call`api.storage`. I used that for a while, but later
+to the selector and then call `api.storage`. I used that for a while, but later
 decided to implement something much nicer. It's a feature which I always wanted
 - the ability to create your own properties and save tons lines. For example, 
-let's create a new property called`theme` and process its value. 
+let's create a new property called `theme` and process its value.
 
     // B.js - definition of the plugin 
     module.exports = function(api) {
@@ -304,12 +301,12 @@ queries bubbling, file import, variables, mixins and so one. However, it brings
 more flexibility, because it is a pure JavaScript. It has even a
 [GruntJS support][6]. I'd like to get some feedback and will be happy if you
 take a part in the project. The official repository is available here
-<https://github.com/krasimir/absurd>. </article>
+[https://github.com/krasimir/absurd][7].
 
  [1]: https://github.com/krasimir/absurd
  [2]: img/concept.gif
  [3]: img/input.jpg
-
  [4]: http://krasimirtsonev.com/blog/article/Two-handy-and-advanced-SASS-features-and-their-limitations
  [5]: https://github.com/krasimir/absurd#usage
  [6]: https://github.com/krasimir/absurd#using-with-grunt
+ [7]: https://github.com/krasimir/absurd
