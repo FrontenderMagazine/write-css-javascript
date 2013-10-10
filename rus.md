@@ -69,7 +69,7 @@
 
     lessc .\css.less > styles.less.css
 
-С AbsurdJS все точно так же. Устанавливается пакетным менеджеро node -
+С AbsurdJS все точно так же. Устанавливается пакетным менеджеро node
 `npm install -g absurd`.
 
     absurd -s css.js -o styles.absurd.css
